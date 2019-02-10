@@ -7,4 +7,4 @@ A very basic HTML form illustrating
 
 ### Deployment
 
- [deployed](basicform.tomgdow.) on github pages at  basicform.tomgdow.com
+ [deployed](basicform.tomgdow.com) on github pages at  [basicform.tomgdow.com](basicform.tomgdow.com)
