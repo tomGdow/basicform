@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Simple HTML form</h2>
+    <form action="./sendmehere.html" name ="myform" method="get" onsubmit="checkFields(event)">
+    <div>
+        <label for="myname">Name</label>
+        <input type="text" name="myname" id="myname" oninput=mynameout.innerHTML=this.value.toUpperCase()>
+        <span id="mynameout"></span>
+    </div>
+    <div>
+        <label for="myemail">Email</label>
+        <input type="email" name="myemail" oninput="myemailout.innerHTML=this.value" required>
+        <span id="myemailout"></span>
+    </div>
+    <div>
+
+        <label for="btn">&nbsp;</label>
+        <input type="submit" value="Submit" id ="btn">
+    </div>
+    
+    </form>
+    <script src="./tgd.js"></script>
+    <script>
+    
+    function checkFields (event) {
+      console.log('checked');
+
+      var mycheck=document.getElementById('myname');
+
+      if(mycheck.value==''){
+          var mynameout=document.getElementById('mynameout');
+          mynameout.innerHTML="This field must be filled in"
+          mynameout.style.backgroundColor="red";
+          event.preventDefault();
+      }
+
+    }
+
+    document.getElementById('myname').addEventListener('focus', function () {
+        document.getElementById('mynameout').style.backgroundColor="white"
+        document.getElementById('mynameout').innerText=""; 
+    })
+
+    // c(gopnames(checkFields),
+    // gopnames(checkFields.prototype),
+    // gopnames(gpo(checkFields)),
+    // gopnames(document.getElementById)
+    // )
+
+    const cbygURL='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace';
+    const myGravatarURL='https://s.gravatar.com/avatar/1670879794aed7c23742e5b1f759be94?s=40';
+    var myLink=document.createElement('link');
+    myLink.setAttribute('rel', 'icon');
+    myLink.setAttribute('type', 'image/x-icon');
+    myLink.setAttribute('href', myGravatarURL);
+    document.head.appendChild(myLink);
+    var cbygFont=document.createElement('link');
+    cbygFont.setAttribute('rel', 'stylesheet');
+    cbygFont.setAttribute('href', cbygURL);
+    document.head.appendChild(cbygFont);
+    var myStyle = document.createElement('style')
+    var fontName='Covered By Your Grace';
+    myStyle.innerHTML='h2 { font-family: ' + fontName + ', cursive; color: green;}';
+    document.head.appendChild(myStyle);
+    document.title='Basic Form';
+    console.log('%c %s ', 'background: red; color: white', 'tomgdow was here');
+
+    </script>
+</body>
+</html>
